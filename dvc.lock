@@ -5,22 +5,22 @@ stages:
     deps:
     - path: src/get_data.py
       hash: md5
-      md5: bdca2bdd6c16933765451d42c6e155a3
+      md5: c86b00dc812b5dfd2a2545ce2f858949
       size: 638
       isexec: true
     outs:
     - path: smsspamcollection
       hash: md5
-      md5: 6a96da26fe9ed5d450b58dd97347334e.dir
-      size: 687902
+      md5: 5a84bb806c75cbc704c9fb17e1ba8e44.dir
+      size: 604940
       nfiles: 3
   preprocess:
     cmd: python src/text_preprocessing.py
     deps:
     - path: smsspamcollection/SMSSpamCollection
       hash: md5
-      md5: fd45282652a83e8a5d4071dc65d7f615
-      size: 342860
+      md5: 1486bd45728415fc3ffb5496c7a65f57
+      size: 259898
       isexec: true
     - path: src/text_preprocessing.py
       hash: md5
@@ -30,21 +30,21 @@ stages:
     outs:
     - path: output/preprocessed_data.joblib
       hash: md5
-      md5: 8c475ae21dcd90c9442fa90ba7056d61
-      size: 495124
+      md5: 4b8f0f579128145a6bca237e619bc994
+      size: 374924
       isexec: true
     - path: output/preprocessor.joblib
       hash: md5
-      md5: 3941e056f367aa609155989589b021d7
-      size: 192137
+      md5: 52053a1ad487f596859fd2be3e87f642
+      size: 162649
       isexec: true
   train:
     cmd: python src/text_classification.py
     deps:
     - path: output/preprocessed_data.joblib
       hash: md5
-      md5: 8c475ae21dcd90c9442fa90ba7056d61
-      size: 495124
+      md5: 4b8f0f579128145a6bca237e619bc994
+      size: 374924
       isexec: true
     - path: src/text_classification.py
       hash: md5
@@ -54,16 +54,16 @@ stages:
     outs:
     - path: output/accuracy_scores.png
       hash: md5
-      md5: 690d2c1cb64a6b3471e31581ce034197
-      size: 23877
+      md5: ea74702bc0cbe9531c84a2eabb31693e
+      size: 23933
       isexec: true
     - path: output/misclassified_msgs.txt
       hash: md5
-      md5: 8b4e203786dcf5f6d777c2660db09695
-      size: 80235
+      md5: fef892173659385b5220f5adfbd35dcc
+      size: 64155
       isexec: true
     - path: output/model.joblib
       hash: md5
-      md5: 8bd3203ae3772f2949f481f047b302bb
-      size: 15001
+      md5: ed2ce560b522832530d0dc7f9641e5a2
+      size: 12281
       isexec: true
