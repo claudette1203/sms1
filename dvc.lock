@@ -48,22 +48,27 @@ stages:
       isexec: true
     - path: src/text_classification.py
       hash: md5
-      md5: 3ad04484160ee8280302d48d65739774
-      size: 3385
+      md5: 6ad90253f2a598df585314efd8e8e0f5
+      size: 3592
       isexec: true
     outs:
     - path: output/accuracy_scores.png
       hash: md5
-      md5: ea74702bc0cbe9531c84a2eabb31693e
-      size: 23933
+      md5: c410a14bf29ed26a94fa93e678823e6c
+      size: 23888
+      isexec: true
+    - path: output/metrics.json
+      hash: md5
+      md5: ea18feda6c3e9f11599c993d3900956a
+      size: 36
       isexec: true
     - path: output/misclassified_msgs.txt
       hash: md5
-      md5: fef892173659385b5220f5adfbd35dcc
-      size: 64155
+      md5: a21338e832b0b89ffd44ca8a30192ec6
+      size: 64116
       isexec: true
     - path: output/model.joblib
       hash: md5
-      md5: ed2ce560b522832530d0dc7f9641e5a2
-      size: 12281
+      md5: 4469add5fc2a8c0aa5351aa17c413a78
+      size: 13561
       isexec: true
