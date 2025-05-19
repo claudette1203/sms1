@@ -15,6 +15,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 from text_preprocessing import _load_data
 
+import json
+
 #matplotlib.use('TkAgg')
 pd.set_option('display.max_colwidth', None)
 
@@ -23,7 +25,7 @@ def my_train_test_split(*datasets):
     '''
     Split dataset into training and test sets. We use a 70/30 split.
     '''
-    return train_test_split(*datasets, test_size=0.3, random_state=101)
+    return train_test_split(*datasets, test_size=0.3, random_state=61)
 
 def train_classifier(classifier, X_train, y_train):
     classifier.fit(X_train, y_train)
@@ -90,6 +92,11 @@ def main():
 
     # Store "best" classifier
     dump(classifiers['Decision Tree'], 'output/model.joblib')
+    dt_acc = pred_scores['Decision Tree'][0]
+
+    # write a simple JSON metrics file
+    with open('output/metrics.json', 'w') as mf:
+        json.dump({"accuracy": dt_acc}, mf, indent=2)
 
 if __name__ == "__main__":
     main()

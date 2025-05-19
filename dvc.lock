@@ -5,22 +5,22 @@ stages:
     deps:
     - path: src/get_data.py
       hash: md5
-      md5: c86b00dc812b5dfd2a2545ce2f858949
+      md5: d0a538f5b198a067a34475f8b2f57517
       size: 638
       isexec: true
     outs:
     - path: smsspamcollection
       hash: md5
-      md5: 5a84bb806c75cbc704c9fb17e1ba8e44.dir
-      size: 604940
+      md5: 98c8e6651ea0eec3c8dc40aa13dc0760.dir
+      size: 518973
       nfiles: 3
   preprocess:
     cmd: python src/text_preprocessing.py
     deps:
     - path: smsspamcollection/SMSSpamCollection
       hash: md5
-      md5: 1486bd45728415fc3ffb5496c7a65f57
-      size: 259898
+      md5: 5ef4e4ba42ed64027b1418dd9ff1f586
+      size: 173931
       isexec: true
     - path: src/text_preprocessing.py
       hash: md5
@@ -30,45 +30,45 @@ stages:
     outs:
     - path: output/preprocessed_data.joblib
       hash: md5
-      md5: 4b8f0f579128145a6bca237e619bc994
-      size: 374924
+      md5: 8b039260f32e9c7da5a12c4ec5f7e202
+      size: 251348
       isexec: true
     - path: output/preprocessor.joblib
       hash: md5
-      md5: 52053a1ad487f596859fd2be3e87f642
-      size: 162649
+      md5: 57fb95c800338d9b6a3b19de9b1c72bf
+      size: 128457
       isexec: true
   train:
     cmd: python src/text_classification.py
     deps:
     - path: output/preprocessed_data.joblib
       hash: md5
-      md5: 4b8f0f579128145a6bca237e619bc994
-      size: 374924
+      md5: 8b039260f32e9c7da5a12c4ec5f7e202
+      size: 251348
       isexec: true
     - path: src/text_classification.py
       hash: md5
-      md5: 6ad90253f2a598df585314efd8e8e0f5
+      md5: ae2d48cbf2f5b12d96e08773f1253ef6
       size: 3592
       isexec: true
     outs:
     - path: output/accuracy_scores.png
       hash: md5
-      md5: c410a14bf29ed26a94fa93e678823e6c
-      size: 23888
+      md5: 704582d4e619dc27e3ed9ec7a9543d39
+      size: 23924
       isexec: true
     - path: output/metrics.json
       hash: md5
-      md5: ea18feda6c3e9f11599c993d3900956a
+      md5: 24aa64996571e00b753dcaa5d7504423
       size: 36
       isexec: true
     - path: output/misclassified_msgs.txt
       hash: md5
-      md5: a21338e832b0b89ffd44ca8a30192ec6
-      size: 64116
+      md5: 56efe9cb87293f622ffdacd4304f4c9b
+      size: 41275
       isexec: true
     - path: output/model.joblib
       hash: md5
-      md5: 4469add5fc2a8c0aa5351aa17c413a78
-      size: 13561
+      md5: 607663f4ca609a9fb9c63db33469115f
+      size: 10681
       isexec: true
